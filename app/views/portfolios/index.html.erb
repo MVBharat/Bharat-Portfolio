@@ -3,7 +3,7 @@
 <%= link_to "Add New Item", new_portfolio_path %> 
 
 <% @portfolio_items.order(:id).each do |portfolio_item| %>
-	<h5> <%= link_to portfolio_item.title, portfolio_path(portfolio_item.id) %></h5>
+	<h5> <%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id) %></h5>
 	<em><%= portfolio_item.subtitle %></em>
 	<p> &nbsp; &nbsp;<%= portfolio_item.body %></p>
 	<h5>Main Image: <%= portfolio_item.main_image %></h5>
