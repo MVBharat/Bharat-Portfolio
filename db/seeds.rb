@@ -1,3 +1,11 @@
+3.times do |topic|
+	Topic.create!(
+		title: "Topic #{topic}"
+		)
+end
+
+puts "3 Topics created"
+
 10.times do |blog|
 	Blog.create!(
 		title: "My Blog Post #{blog}", 
@@ -5,7 +13,8 @@
 				the readable content of a page when looking at its layout. The point of
 		 		using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
 				as opposed to using 'Content here, content here', 
-				making it look like readable English. Many desktop publishing packages and web page. "
+				making it look like readable English. Many desktop publishing packages and web page. ",
+		topic_id: Topic.last.id
 		)	
 end
 
@@ -21,10 +30,24 @@ end
 puts "5 skills created"
 
 
-9.times do |portfolio_item|
+8.times do |portfolio_item|
 	Portfolio.create!(
 			title: "Portfolio title #{portfolio_item}",
-			subtitle: "My greate service",
+			subtitle: "Ruby on Rails",
+			body: "There are many variations of passages of Lorem Ipsum available, 
+					but the majority have suffered alteration in some form, 
+					by injected humour, or randomised words which don't look even slightly believable.
+					If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't 
+					anything embarrassing hidden in the middle of text. ",
+			main_image: "https://via.placeholder.com/600x400",
+			thumb_image: "https://via.placeholder.com/350x200"
+		)
+end
+
+1.times do |portfolio_item|
+	Portfolio.create!(
+			title: "Portfolio title #{portfolio_item}",
+			subtitle: "JavaScript",
 			body: "There are many variations of passages of Lorem Ipsum available, 
 					but the majority have suffered alteration in some form, 
 					by injected humour, or randomised words which don't look even slightly believable.
