@@ -4,15 +4,13 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <meta name="keyword" content="<%= @seo_keywords %>" />
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   	 <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
-
-    <%= render 'shared/navbar', location: 'top' %> 
 
   	<% if current_user.is_a?(User) %>
   		<%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -25,5 +23,9 @@
     <% if session[:source] %>
 		  <p>Thanks for visiting me from <%= session[:source] %></p>
     <% end %>
+
+    <%= render 'shared/navbar', location: 'bottom' %> 
+   
+
   </body>
 </html>
