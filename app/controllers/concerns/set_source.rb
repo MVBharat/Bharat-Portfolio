@@ -9,4 +9,5 @@ module SetSource
 		session[:source] = params[:q] if params[:q]
 	end
 
-end
+
+end 
