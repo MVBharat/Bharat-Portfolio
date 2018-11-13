@@ -4,26 +4,19 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <meta name="keyword" content="<%= @seo_keywords %>" />
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   	 <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
-<<<<<<< HEAD
     
-    <%= login_helper %>
-    
-=======
-
     <%= render 'shared/navbar', location: 'top' %> 
-
-    <%= login_helper %>
-
->>>>>>> 222b4792acac27741df34589a99456fdab647491
-    <%= yield %>
     
+    <%= login_helper %>
+  	
+    <%= yield %>
     <% if session[:source] %>
 		  <p>Thanks for visiting me from <%= session[:source] %></p>
     <% end %>
