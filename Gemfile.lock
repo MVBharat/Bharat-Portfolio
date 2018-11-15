@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/MVBharat/mane_view_tool
+  revision: 257d30359df39c1110a544b2b7c11eb5136a6c2b
+  specs:
+    mane_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -192,6 +198,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  mane_view_tool!
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rails (~> 5.1.6)

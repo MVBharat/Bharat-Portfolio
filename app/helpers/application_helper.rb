@@ -16,5 +16,9 @@ module ApplicationHelper
 			content_tag(:p, greeting, class: "source-greeting")  
 		end
 	end
+
+	def copyright_generator
+  		@copyright = ManeViewTool::Renderer.copyright 'Bharat Mane', 'All rights reserved'		
+	end
 end
 
