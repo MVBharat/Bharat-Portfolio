@@ -58,4 +58,4 @@ gem 'jquery-rails'
 
 gem "autoprefixer-rails"
 
-gem 'mane_view_tool', git: 'https://github.com/MVBharat/mane_view_tool'
+gem 'mane_view_tool','~> 0.1.0'
