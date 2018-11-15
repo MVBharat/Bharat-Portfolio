@@ -2,14 +2,5 @@
 
 <%= link_to "Add New Item", new_portfolio_path %> 
 
-<% @portfolio_items.order(:id).each do |portfolio_item| %>
-	<h5> <%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id) %></h5>
-	<em><%= portfolio_item.subtitle %></em>
-	<p> &nbsp; &nbsp;<%= portfolio_item.body %></p>
-	<h5>Main Image: <%= portfolio_item.main_image %></h5>
-	<h5> <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %></h5>
-	<p> <%= link_to "Edit Item", edit_portfolio_path(portfolio_item.id) %> </p>
-	<p> <%= link_to "Delete", portfolio_item, method: :delete,
-											 data: {confirm: "Are you sure want to do"}%> </p>
-	<hr>
-<% end %>
+<%= render partial: 'portfolio_item', collection: @portfolio_items %>
+	
