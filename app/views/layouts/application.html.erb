@@ -14,13 +14,13 @@
   <body>
   	 <div class="site-wrapper">
        <div class="site-wrapper-inner">
-         <div class="cover-container">           
+         <div class="cover-container  text-center">           
             <%= render 'shared/application_nav' %> 
 
-            <%= login_helper %>
             <%= yield %>
-
-            <%= copyright_generator %>
+          
+            <%= render 'shared/application_footer' %> 
+          
           
             <%= source_helper("application") %>    
          </div>
