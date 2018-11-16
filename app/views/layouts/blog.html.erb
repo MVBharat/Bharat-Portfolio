@@ -14,12 +14,25 @@
   <body>
 
     <%= render partial: 'shared/blog_nav' %>      
+        
+    <div class="blog-header">
+      <div class="container">
+        <h6 class="blog-title"> My Blog</h6>
+          <div class="lead blog-description">
+                   <p>Blogs should be technical related only </p> 
+                  <%= link_to 'Write a New Blog', new_blog_path if logged_in? ( :site_admin ) %>          
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container">
-    
-      <%= yield %>
+      <div class="row">
+        <div class="col-md-9 blog-main">      
+          <%= yield %>
+        </div>
 
-      <!-- Start Side bar  -->
-        <aside class="col-md-4 blog-sidebar">
+        <!-- Start Side bar  -->
+        <aside class="col-md-3 blog-sidebar">
           <div class="p-3 mb-3 bg-light rounded">
             <h4 class="font-italic">About</h4>
             <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -53,6 +66,7 @@
           </div>
         </aside>
         <!-- End of Side Bar -->
+      </div>
 
         <!-- Start of Footer -->
 
@@ -65,10 +79,7 @@
         <!-- End of Footer -->
       
       <%= source_helper("blog") %>    
-      
-
-      <%= render 'shared/navbar', location: 'bottom' %> 
-     
+           
     </div>
 
 
