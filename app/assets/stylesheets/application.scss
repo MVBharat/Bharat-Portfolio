@@ -108,9 +108,23 @@ body {
  * Footer
  */
 .mastfoot {
-  color: rgba(255, 255, 255, .5);
-  position: absolute;
+  color: rgba(255, 255, 255, .5);  
   bottom: 0;  
   height: 50px;
 }
 
+
+
+/*
+ * Custom style
+ */
+
+
+ .card-block{
+  color: black;
+  text-align: left;
+ }
+
+ .auth-link a{
+  color: black;
+ }
