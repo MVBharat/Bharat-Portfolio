@@ -1,0 +1,10 @@
+<div class="blog-header">
+  <div class="container">
+    <h6 class="blog-title"> My Blog </h6>
+      <div class="lead blog-description">
+               <p>Blogs should be technical related only </p> 
+              <%= link_to 'Write a New Blog', new_blog_path if logged_in? ( :site_admin ) %>          
+      </div>
+    </div>
+  </div>
+</div>
