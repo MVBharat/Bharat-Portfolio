@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 /* stylelint-disable selector-list-comma-newline-after */
 
@@ -159,4 +160,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .blog-sidebar{
  margin-top: 20px; 
+}
+
+ol.font-style li {
+    list-style-type: none;
+    font-size: 1.5em;
 }
