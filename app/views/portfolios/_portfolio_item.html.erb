@@ -1,12 +1,28 @@
-<h5> <%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></h5>
+<div class="col-md-4">
+  <div class="card mb-4 box-shadow">
+    <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+    <div class="card-body">
+      <p class="card-text">
+      	<span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></span>
+		<em><%= portfolio_item.subtitle %></em>
+      </p>
 
-<em><%= portfolio_item.subtitle %></em>
+      <% if logged_in? ( :site_admin ) %>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+           <p>
+            <%= link_to "Edit", edit_portfolio_path(portfolio_item.id), class: 'btn  btn-sm btn-outline-secondary'   %>         	
+           </p>
+           <p>
+           	<%= link_to "View", portfolio_path(portfolio_item.id), class: 'btn  btn-sm btn-outline-secondary'   %> 
+           </p> 
+        </div>
+        
+        <small  class="text-muted"> <%=  distance_of_time_in_words(portfolio_item.created_at, Time.now) %> </small>
 
-<p> &nbsp; &nbsp;<%= portfolio_item.body %></p>
+      </div>
 
-<h5> <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %></h5>
-
-<p> <%= link_to "Edit Item", edit_portfolio_path(portfolio_item.id)  if logged_in? ( :site_admin )  %> </p>
-<p> <%= link_to "Delete", portfolio_item, method: :delete,
-										 data: {confirm: "Are you sure want to do"}  if logged_in? ( :site_admin ) %> </p>
-<hr>
+      <% end %>
+    </div>
+  </div>
+</div>
