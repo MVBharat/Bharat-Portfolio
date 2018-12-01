@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
   layout 'portfolio'
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update]}, site_admin: :all
+  access all: [:show, :index], user: {except: [:new, :destroy,  :create, :edit, :update, :sort]}, site_admin: :all
 	
 	def index
 		@portfolio_items = Portfolio.all
@@ -30,8 +30,7 @@ class PortfoliosController < ApplicationController
 	def update
 		respond_to do |format|
 			if @portfolio_item.update(portfolio_params)
-				format.html {redirect_to portfolios_path, notice: "Your portfolio updated "}				
-			
+				format.html {redirect_to portfolios_path, notice: "Your portfolio updated "}							
 			else
 				format.html {render :edit}	
 			end
@@ -53,11 +52,8 @@ class PortfoliosController < ApplicationController
 	private
 
 		def portfolio_params
-			params.require(:portfolio).permit(:title, :subtitle, :body,
-												technologies_attributes: [:name]
-											  )
+			params.require(:portfolio).permit(:title, :subtitle, :body,	technologies_attributes: [:name]											  )
 		end
-
 
 		def set_portfolio_item
 			@portfolio_item = Portfolio.find(params[:id])		
