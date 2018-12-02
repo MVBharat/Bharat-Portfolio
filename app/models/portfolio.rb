@@ -8,6 +8,11 @@ class Portfolio < ApplicationRecord
 	def self.javascript
 		where(subtitle: "JavaScript")
 	end
+
+	def self.by_position
+		order("position ASC")
+	end
+
  # both are same
 	scope :ruby_on_rails, -> { where(subtitle: "Ruby on Rails") }
 
