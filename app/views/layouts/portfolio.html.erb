@@ -15,7 +15,6 @@
 
     <%= render 'shared/portfolio_navbar' %>    
     <div class="main">
-      <%= link_to "New Portfolio", new_portfolio_path %>
       <%= render 'shared/portfolio_masthead' unless logged_in? (:site_admin) %>
     </div>
     

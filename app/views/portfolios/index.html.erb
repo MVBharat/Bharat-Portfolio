@@ -1,6 +1,6 @@
 <br>
-<%= link_to "Add New Item", new_portfolio_path  if logged_in? ( :site_admin )  %> 
-
+<%= link_to "Add New Items", new_portfolio_path if logged_in?(:site_admin) %> 
+	
 <div class="album py-5 bg-light">
 	<div class="container">
 	  <div class="row <%= "sortable" if logged_in?(:site_admin) %>">
