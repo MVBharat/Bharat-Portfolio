@@ -30,7 +30,6 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
 }
 
 body {
@@ -140,7 +139,9 @@ body {
  }
 
  #background{
-  position: relative;
+  position: fixed;
+  top: 0%;
+  left: 0%;
   min-width: 100%;
   min-height: 100%;
   width: auto;
@@ -148,7 +149,7 @@ body {
   z-index: -100;
   -webkit-transform: translateX(-50%) translatelateY(-50%);
   transform: translateX(-50%) translatelateY(-50%);
-  background: image-url('home.jpg') no-repeat;
+  background: image-url('home_bg.png') no-repeat;
   backgound-size: cover;
  }
 

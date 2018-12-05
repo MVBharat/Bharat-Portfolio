@@ -11,11 +11,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body id="background">
-    <div ></div>
+  <body>
      <div class="site-wrapper">
        <div class="site-wrapper-inner">
-         <div class="cover-container container text-center" >
+         <div class="cover-container text-center" >
+
+            <%= video_tag(
+              'HardDrivePhotojpeg.mp4',
+              id: 'background',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              poster: 'home_bg.png'
+              )
+              %>
+
             <%= render 'shared/application_nav' %> 
             <br>
             <%= yield %>
